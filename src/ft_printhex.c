@@ -12,19 +12,19 @@
 
 #include "../include/ft_printf.h"
 
-int	ft_printhex(unsigned int num, bool isCapital)
+int	ft_printhex(unsigned int num, bool is_capital)
 {
 	char	*base_hex;
 	int		count;
 
 	count = 0;
-	if (isCapital)
+	if (is_capital)
 		base_hex = "0123456789ABCDEF";
 	else
 		base_hex = "0123456789abcdef";
 	if (num >= 16)
 	{
-		count += ft_printhex(num / 16, isCapital);
+		count += ft_printhex(num / 16, is_capital);
 	}
 	count += ft_printchar(base_hex[num % 16]);
 	return (count);
